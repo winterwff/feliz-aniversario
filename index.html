@@ -7,78 +7,160 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 <style>
 body {
-  margin:0;
-  padding:0;
-  min-height:100vh;
-  background:radial-gradient(ellipse at bottom,#200000 0%,#000 100%);
-  overflow-x:hidden;
-  color:#f5f3e7;
-  font-family:'Cinzel Decorative',serif;
-  text-align:center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #200000 0%, #000 100%);
+  overflow-x: hidden;
+  color: #f5f3e7;
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
 }
 
 /* Céu e lua */
-.sky {position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden;}
-.moon {position:absolute;top:10%;right:5%;width:80px;height:80px;
-  background:radial-gradient(circle at 30% 30%, #fff, #f0f0f0 60%, #cfcfcf);
-  border-radius:50%;box-shadow:0 0 30px #fff8;z-index:2;
+.sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+.moon {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%, #fff, #f0f0f0 60%, #cfcfcf);
+  border-radius: 50%;
+  box-shadow: 0 0 30px #fff8;
+  z-index: 2;
 }
 
 /* Nuvens */
-.cloud {position:absolute;width:120px;height:40px;background:rgba(255,255,255,0.12);
-  border-radius:50%;filter: blur(10px);animation:cloudMove linear infinite;}
-.cloud:nth-child(1) {top:20%; left:-200px; animation-duration:80s;}
-.cloud:nth-child(2) {top:30%; left:-250px; animation-duration:100s;}
-.cloud:nth-child(3) {top:15%; left:-180px; animation-duration:120s;}
-@keyframes cloudMove {0%{transform:translateX(0);}100%{transform:translateX(150vw);}}
+.cloud {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: cloudMove linear infinite;
+}
+.cloud:nth-child(1) { top: 20%; left: -200px; animation-duration: 80s; }
+.cloud:nth-child(2) { top: 30%; left: -250px; animation-duration: 100s; }
+.cloud:nth-child(3) { top: 15%; left: -180px; animation-duration: 120s; }
+@keyframes cloudMove { 0% { transform: translateX(0); } 100% { transform: translateX(150vw); } }
 
 /* Estrelas */
-.star {position:absolute;width:2px;height:2px;background:white;border-radius:50%;
-  box-shadow:0 0 5px white;opacity:0.8;animation:twinkle 3s infinite ease-in-out;}
-@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px white;
+  opacity: 0.8;
+  animation: twinkle 3s infinite ease-in-out;
+}
+@keyframes twinkle { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
 
 /* Header e título */
-header{position:relative;z-index:10;padding-top:20%;}
-h1{font-size:1.5em; text-shadow:0 0 12px #ffb300,0 0 25px #b71c1c; margin-bottom:8px; animation:glow 2s infinite alternate;}
-@keyframes glow{from{text-shadow:0 0 8px #ffca28,0 0 20px #b71c1c;}to{ text-shadow:0 0 20px #ffe066,0 0 35px #ff0000;}}
-p{font-size:0.85em;color:#f0e6d2;margin-bottom:15px;padding:0 10px;}
+header {
+  position: relative;
+  z-index: 10;
+  padding-top: 18%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h1 {
+  font-size: 1.2em;
+  text-shadow: 0 0 8px #ffb300, 0 0 18px #b71c1c;
+  margin-bottom: 6px;
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 8px #ffca28, 0 0 20px #b71c1c; }
+  to { text-shadow: 0 0 20px #ffe066, 0 0 35px #ff0000; }
+}
+p {
+  font-size: 0.7em;
+  color: #f0e6d2;
+  margin-bottom: 12px;
+  padding: 0 6px;
+}
 
 /* Botão */
-button{padding:8px 16px;font-size:0.85em;background:linear-gradient(45deg,#b71c1c,#ffca28);
-border:none;border-radius:10px;color:#2b1b08;font-weight:bold;cursor:pointer;box-shadow:0 0 10px #ffca28;
-transition:transform 0.3s,box-shadow 0.3s;position:relative;z-index:10;}
-button:hover{transform:scale(1.1);box-shadow:0 0 20px #ffb300,0 0 25px #b71c1c;}
+button {
+  padding: 6px 14px;
+  font-size: 0.75em;
+  background: linear-gradient(45deg, #b71c1c, #ffca28);
+  border: none;
+  border-radius: 10px;
+  color: #2b1b08;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px #ffca28;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 10;
+}
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px #ffb300, 0 0 20px #b71c1c;
+}
 
 /* Mensagem */
-.spell-message{display:block;position:absolute;top:78%;left:50%;transform:translate(-50%,-50%);
-font-size:0.75em;color:#ffd700;text-shadow:0 0 12px #ffe066,0 0 25px #fff3b0;z-index:20;line-height:1.3;padding:0 10px;animation:glow 2s infinite alternate;max-width:95%;word-wrap:break-word;}
+.spell-message {
+  display: block;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.65em;
+  color: #ffd700;
+  text-shadow: 0 0 8px #ffe066, 0 0 18px #fff3b0;
+  z-index: 20;
+  line-height: 1.3;
+  padding: 0 6px;
+  animation: glow 2s infinite alternate;
+  max-width: 90%;
+  word-wrap: break-word;
+}
 
 /* Partículas */
-.particle{position:absolute;width:4px;height:4px;background:radial-gradient(circle,#ffca28,#ff0000);border-radius:50%;pointer-events:none;opacity:0.8;animation:float 1.5s linear forwards;}
-@keyframes float{to{transform:translateY(-100px) translateX(15px);opacity:0;}}
-
-/* Faíscas */
-.spark{position:absolute;width:2px;height:12px;background:linear-gradient(to top,#ffb300,#fff);border-radius:50%;animation:spark 2s linear infinite;opacity:0.7;}
-@keyframes spark{0%{transform:translateY(0) scaleY(1);opacity:1;}100%{transform:translateY(-60vh) scaleY(0.3);opacity:0;}}
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #ffca28, #ff0000);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: float 1.5s linear forwards;
+}
+@keyframes float { to { transform: translateY(-100px) translateX(15px); opacity: 0; } }
 
 /* Brasão Grifinória */
-.house-crest{width:50px;position:absolute;top:5%;left:5%;z-index:15;filter:drop-shadow(0 0 8px #ffb300);}
+.house-crest {
+  width: 45px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 15;
+  filter: drop-shadow(0 0 8px #ffb300);
+}
 
 /* Footer */
-footer{position:absolute;bottom:10px;width:100%;font-size:0.7em;color:#a89f8d;z-index:10;}
-
-/* Responsividade */
-@media screen and (min-width:480px){
-  h1{font-size:1.8em;}
-  p{font-size:1em;}
-  .spell-message{font-size:0.85em;}
-  button{font-size:0.9em;padding:10px 18px;}
-}
-@media screen and (min-width:600px){
-  h1{font-size:2.5em;}
-  p{font-size:1.2em;}
-  .spell-message{font-size:1em;}
-  button{font-size:1.1em;padding:12px 24px;}
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-size: 0.6em;
+  color: #a89f8d;
+  z-index: 10;
 }
 </style>
 </head>
@@ -94,41 +176,32 @@ footer{position:absolute;bottom:10px;width:100%;font-size:0.7em;color:#a89f8d;z-
 <img class="house-crest" src="https://libreriavictoria.es/wp-content/uploads/2022/11/Bandera-Harry-Potter-Gryffindor-Banderin-Pendon-2-465x465.webp" alt="Brasão da Grifinória">
 
 <header>
-<h1>🦁 Feliz Aniversário, minha Grifinória favorita! ✨</h1>
-<p id="introMessage">Que a coragem, o amor e a magia estejam sempre com você ❤️💛</p>
-<button onclick="revelarFeitico()">🎇 Lançar Feitiço</button>
+  <h1>🦁 Feliz Aniversário, minha Grifinória favorita! ✨</h1>
+  <p id="introMessage">Que a coragem, o amor e a magia estejam sempre com você ❤️💛</p>
+  <button onclick="revelarFeitico()">🎇 Lançar Feitiço</button>
 </header>
 
 <div class="spell-message" id="spellMessage"></div>
 
-<footer>© winterwf ✨ • Orgulho da Sonserina</footer>
+<footer>© winterwf ✨ </footer>
 
 <script>
 // Estrelas
 const sky = document.getElementById('sky');
 const numStars = 150;
-for (let i=0;i<numStars;i++){
-  const star=document.createElement('div');
+for (let i = 0; i < numStars; i++) {
+  const star = document.createElement('div');
   star.classList.add('star');
-  const x=Math.random()*window.innerWidth;
-  const y=Math.random()*window.innerHeight;
-  const size=Math.random()*2+1;
-  const delay=Math.random()*3;
-  star.style.left=`${x}px`;
-  star.style.top=`${y}px`;
-  star.style.width=`${size}px`;
-  star.style.height=`${size}px`;
-  star.style.animationDelay=`${delay}s`;
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+  const size = Math.random() * 2 + 1;
+  const delay = Math.random() * 3;
+  star.style.left = `${x}px`;
+  star.style.top = `${y}px`;
+  star.style.width = `${size}px`;
+  star.style.height = `${size}px`;
+  star.style.animationDelay = `${delay}s`;
   sky.appendChild(star);
-}
-
-// Faíscas da Grifinória
-for (let i=0; i<20; i++){
-  const spark=document.createElement('div');
-  spark.classList.add('spark');
-  spark.style.left=`${Math.random()*100}vw`;
-  spark.style.animationDelay=`${Math.random()*2}s`;
-  document.body.appendChild(spark);
 }
 
 // Texto do feitiço
@@ -140,33 +213,32 @@ E quero compartilhar tudo, até mesmo as poções que eu não consigo fazer dire
 Com carinho,
 da sua trouxa boba, atrapalhada e completamente encantada por você 🪄❤️`;
 
-function revelarFeitico(){
+function revelarFeitico() {
   const msg = document.getElementById('spellMessage');
   const intro = document.getElementById('introMessage');
-  intro.style.display='none';
+  intro.style.display = 'none';
   msg.innerHTML = '';
-  let i=0;
+  let i = 0;
 
   const btn = document.querySelector('button');
   const btnRect = btn.getBoundingClientRect();
-  for(let p=0;p<30;p++){
-    const particle=document.createElement('div');
+  for (let p = 0; p < 30; p++) {
+    const particle = document.createElement('div');
     particle.classList.add('particle');
-    particle.style.left=`${btnRect.left + btnRect.width/2}px`;
-    particle.style.top=`${btnRect.top + btnRect.height/2}px`;
-    particle.style.animationDuration=`${Math.random()*1.5 + 1}s`;
-    particle.style.transform=`translate(${(Math.random()-0.5)*150}px, ${(Math.random()-0.5)*-150}px)`;
+    particle.style.left = `${btnRect.left + btnRect.width / 2}px`;
+    particle.style.top = `${btnRect.top + btnRect.height / 2}px`;
+    particle.style.animationDuration = `${Math.random() * 1.5 + 1}s`;
+    particle.style.transform = `translate(${(Math.random() - 0.5) * 150}px, ${(Math.random() - 0.5) * -150}px)`;
     document.body.appendChild(particle);
-    particle.addEventListener('animationend',()=>particle.remove());
+    particle.addEventListener('animationend', () => particle.remove());
   }
 
-  const interval = setInterval(()=>{
+  const interval = setInterval(() => {
     msg.innerHTML += textoFeitico[i] === '\n' ? '<br>' : textoFeitico[i];
     i++;
-    if(i >= textoFeitico.length) clearInterval(interval);
+    if (i >= textoFeitico.length) clearInterval(interval);
   }, 35);
 }
 </script>
 </body>
 </html>
-
